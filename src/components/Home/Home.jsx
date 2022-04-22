@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   GET_ALL_COUNTRIES,
+  GET_COUNTRIE,
   GET_COUNTRIES_AT_CONTINENT,
   GET_COUNTRIE_AT_CONTINENT,
 } from "../../api/api";
@@ -11,6 +12,7 @@ import styles from "./Home.module.css";
 
 const Home = () => {
   const { data, request, loading, setData } = useFetch();
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const { url, options } = GET_ALL_COUNTRIES();
@@ -23,18 +25,30 @@ const Home = () => {
     request(url, options);
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const {url, options} = GET_COUNTRIE(search);
+    request(url, options);
+  }
+
   if (loading) return <Loading />;
   if (data)
     return (
       <main className={styles.home}>
         <div className="container">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="formItem">
-              <button>O</button>
-              <input type="text" />
+              <button tipe="submit">O</button>
+              <input
+                onChange={({ target }) => setSearch(target.value)}
+                value={search}
+                type="text"
+              />
             </div>
           </form>
-          <select onChange={({target}) => getCountriesAtContinent(target.value)}>
+          <select
+            onChange={({ target }) => getCountriesAtContinent(target.value)}
+          >
             <option selected disabled value="">
               Filter by Region
             </option>
