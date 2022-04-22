@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import { GET_COUNTRIE } from "../../api/api";
 import Button from "../Button/Button";
+import Loading from "../Loading/Loading";
 
 const Countrie = () => {
   const { name } = useParams();
@@ -15,7 +16,7 @@ const Countrie = () => {
     request(url, options);
   }, [request]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (data)
     return (
       <div className={styles.countrie}>
@@ -38,7 +39,7 @@ const Countrie = () => {
                 </p>
                 <p>
                   <strong>Population: </strong>
-                  {data[0].population.toLocaleString('pt-BR')}
+                  {data[0].population.toLocaleString("pt-BR")}
                 </p>
                 <p>
                   <strong>Region: </strong>

@@ -1,0 +1,23 @@
+.loading {
+    width: 100px;
+    height: 100px;
+    border: 10px solid grey;
+    border-top: 10px solid white;
+    border-radius: 60px;
+    animation: load 1s linear infinite;
+    z-index: 100;
+}
+
+@keyframes load {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.grid {
+    width: 100%;
+    height: calc(100vh - 85px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

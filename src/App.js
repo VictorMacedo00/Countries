@@ -7,12 +7,14 @@ import Countrie from './components/Countrie/Countrie';
 function App() {
   return (
     <div className="App">
-      <Header />
       <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/countrie/:name' element={<Countrie />} />
-        </Routes>
+        <Header />
+        <main className='mainApp'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/countrie/:name' element={<Countrie />} />
+          </Routes>
+        </main>
       </BrowserRouter>
     </div>
   );
