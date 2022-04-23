@@ -1,5 +1,5 @@
 .home {
-    width: 100vw;
+    width: 100%;
     min-height: calc(100vh - 121px);
     height: auto;
     padding-top: 40px;
@@ -30,18 +30,27 @@
     justify-content: space-between;
 }
 
+.formItem {
+    max-height: 50px;
+    display: flex;
+    align-self: center;
+}
+
 .form form button {
     width: 60px;
     height: 50px;
     border: none;
+    border-radius: 5px 0 0 5px;
+    border-left: none;
 }
 
 .form form input {
     width: 400px;
     height: 50px;
     border: none;
-    border-radius: 5px;
-    padding-left: 10px;
+    border-radius: 0 5px 5px 0;
+    border-left: none;
+    padding: 0 10px;
     margin: 0;
     outline: none;
 }
@@ -55,13 +64,21 @@
 }
 
 .formDark {
-    background-color: #212e37;
+    background-color: #354c5c;
     color: #fff;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
     -5px -5px 10px rgba(255, 255, 255, 0.01)
     ;
 }
 
+.formDark::placeholder {
+    color: #fff;
+}
+
 .formLight {
     background-color: #fff;
+}
+
+.formLight::placeholder {
+    color: #000;
 }

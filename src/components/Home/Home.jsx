@@ -44,7 +44,7 @@ const Home = () => {
       >
         <div className={`${styles.form} container`}>
           <form onSubmit={handleSubmit}>
-            <div className="formItem">
+            <div className={`${styles.formItem}`}>
               <button
                 className={`${theme ? styles.formDark : styles.formLight}`}
                 tipe="submit"
