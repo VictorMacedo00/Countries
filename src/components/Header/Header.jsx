@@ -21,7 +21,7 @@ const Header = () => {
           }`}
           onClick={() => changeTheme()}
         >
-          {theme ? "Light Mode" : "Dark Mode"}
+          {theme ? "Dark Mode" : "Light Mode"}
 
           {/* {theme
             ? `${(<LightMode />)} Light Mode`
