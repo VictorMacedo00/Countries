@@ -20,5 +20,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fafafa;
+
+}
+
+.lightTheme {
+  background-color: #fafafa;
+}
+
+.darkTheme {
+  background-color: #212e37;
 }

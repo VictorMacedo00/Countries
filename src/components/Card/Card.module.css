@@ -2,11 +2,19 @@
     width: 250px;
     max-height: 350px;
     margin-top: 20px;
-    background-color: #fff;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s;
+}
+
+.lightTheme {
+    background-color: #fff;
+}
+
+.darkTheme {
+    background-color: #2b3743;
+    color: #fff;
 }
 
 .card:hover {
@@ -17,6 +25,7 @@
 .flag {
     width: 100%;
     height: 150px;
+    border-radius: 7px 7px 0 0;
     background-color: #fff;
     overflow: hidden;
 }

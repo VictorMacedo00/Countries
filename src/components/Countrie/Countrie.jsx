@@ -1,15 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./Countrie.module.css";
 import { Link, useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import { GET_COUNTRIE } from "../../api/api";
 import Button from "../Button/Button";
 import Loading from "../Loading/Loading";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 const Countrie = () => {
   const { name } = useParams();
 
   const { data, request, loading } = useFetch();
+  const { theme, changeTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     const { url, options } = GET_COUNTRIE(name);
@@ -19,12 +21,22 @@ const Countrie = () => {
   if (loading) return <Loading />;
   if (data)
     return (
-      <div className={styles.countrie}>
+      <div
+        className={`${styles.countrie} ${
+          theme ? styles.darkTheme : styles.lightTheme
+        }`}
+      >
         <div className="container">
           <div className={styles.infos}>
             <div className={styles.btn}>
               <Link to={"/"}>
-                <button className={styles.btnBack}>← Back</button>
+                <button
+                  className={`${styles.btnBack} ${
+                    theme ? styles.darkBack : styles.lightBack
+                  }`}
+                >
+                  ← Back
+                </button>
               </Link>
             </div>
             <div className={styles.flag}>
