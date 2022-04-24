@@ -1,45 +1,54 @@
 .header {
-    width: 100%;
-    height: 80px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+  max-width: 100vw;
+  height: 80px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  overflow-x: hidden;
 }
 
 .headerItems {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .darkTheme {
-    background-color: #212e37;
-    color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #212e37;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .lightTheme {
-    background-color: #fafafa;
-    color: #000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
+  color: #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .btn {
-    width: 200px;
-    height: 50px;
-    outline: none;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: bold;
+  width: auto;
+  padding: 10px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+  text-align: end;
 }
 
 .btnDark {
-    color: #fff;
+  color: #fff;
 }
 
 .btnLight {
-    color: #000;
+  color: #000;
+}
+
+@media (max-width: 375px) {
+  .headerItems {
+    font-size: 0.8rem;
+  }
 }

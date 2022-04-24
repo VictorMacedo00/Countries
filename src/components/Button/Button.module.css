@@ -1,7 +1,9 @@
 .btnCountries {
-    width: auto;
-    margin: 0 10px;
+    width: 40%;
+    margin: 5px 0px;
     padding: 10px 15px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .darkTheme {

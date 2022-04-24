@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import styles from "./Header.module.css";
-import { ReactComponent as LightMode } from "./../../Assets/lightMode.svg";
-import { ReactComponent as DarkMode } from "./../../Assets/darkMode.svg";
+// import { ReactComponent as LightMode } from "./../../Assets/lightMode.svg";
+// import { ReactComponent as DarkMode } from "./../../Assets/darkMode.svg";
 
 const Header = () => {
   const { theme, changeTheme } = useContext(ThemeContext);

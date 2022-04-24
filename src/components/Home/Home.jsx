@@ -42,6 +42,8 @@ const Home = () => {
           theme ? styles.darkTheme : styles.lightTheme
         }`}
       >
+
+        
         <div className={`${styles.form} container`}>
           <form onSubmit={handleSubmit}>
             <div className={`${styles.formItem}`}>
@@ -60,6 +62,7 @@ const Home = () => {
               />
             </div>
           </form>
+
           <select
             className={`${theme ? styles.formDark : styles.lightDark}`}
             onChange={({ target }) => getCountriesAtContinent(target.value)}
@@ -74,6 +77,7 @@ const Home = () => {
             <option value="oceania">Oceania</option>
           </select>
         </div>
+
         <div className={`${styles.countries} container`}>
           {data.map((countrie) => (
             <Card
