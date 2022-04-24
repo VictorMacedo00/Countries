@@ -52,3 +52,9 @@
     font-size: 0.8rem;
   }
 }
+
+@media (max-width: 280px) {
+  .headerItems {
+    font-size: 0.5rem;
+  }
+}

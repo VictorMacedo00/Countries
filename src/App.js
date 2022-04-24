@@ -11,12 +11,12 @@ function App() {
       <BrowserRouter>
         <ThemeProvider>
           <Header />
-          <main className='mainApp'>
+          {/* <main className='mainApp'> */}
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/countrie/:name' element={<Countrie />} />
             </Routes>
-          </main>
+          {/* </main> */}
         </ThemeProvider>
       </BrowserRouter>
     </div>
