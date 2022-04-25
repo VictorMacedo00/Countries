@@ -10,6 +10,10 @@ import Loading from "../Loading/Loading";
 import styles from "./Home.module.css";
 import { ReactComponent as SearchIcon } from "./../../Assets/search-icon.svg";
 import { ThemeContext } from "../../contexts/ThemeContext";
+import NotFound from "../Pages/NotFound/NotFound";
+import { Navigate } from "react-router-dom";
+import Button from "../Button/Button";
+import CountrieNotFound from "../Pages/CountrieNotFound/CountrieNotFound";
 
 const Home = () => {
   const { data, request, loading, setData } = useFetch();
@@ -20,7 +24,6 @@ const Home = () => {
   useEffect(() => {
     const { url, options } = GET_ALL_COUNTRIES();
     request(url, options);
-    console.log(data);
   }, [request]);
 
   const getCountriesAtContinent = async (continent) => {
@@ -30,8 +33,12 @@ const Home = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const { url, options } = GET_COUNTRIE(search);
-    request(url, options);
+    if (search === "") {
+      alert("Insira um valor");
+    } else {
+      const { url, options } = GET_COUNTRIE(search);
+      request(url, options);
+    }
   };
 
   if (loading) return <Loading />;
@@ -42,8 +49,6 @@ const Home = () => {
           theme ? styles.darkTheme : styles.lightTheme
         }`}
       >
-
-        
         <div className={`${styles.form} container`}>
           <form onSubmit={handleSubmit}>
             <div className={`${styles.formItem}`}>
@@ -79,7 +84,7 @@ const Home = () => {
         </div>
 
         <div className={`${styles.countries} container`}>
-          {data.map((countrie) => (
+          {(data.status !== 404) ? data.map((countrie) => (
             <Card
               flag={countrie.flags.svg}
               name={countrie.name}
@@ -88,10 +93,13 @@ const Home = () => {
               capital={countrie.capital}
               key={countrie.name}
             />
-          ))}
+          )) : <CountrieNotFound />}
         </div>
       </main>
     );
+  else {
+    <NotFound />;
+  }
 };
 
 export default Home;

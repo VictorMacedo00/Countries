@@ -1,6 +1,7 @@
 .card {
     width: 250px;
     max-height: 350px;
+    min-height: 350px;
     margin-top: 20px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
     border-radius: 7px;
@@ -39,12 +40,15 @@
 }
 
 .infos {
+    margin-top: 20px;
     margin-left: 15px;
 }
 
 .infos h3 {
     font-size: 300;
+    margin-bottom: 20px;
 }
 .infos p {
+    margin: 10px 0;
     font-size: 0.8rem;
 }
